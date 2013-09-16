@@ -1,0 +1,128 @@
+.countdown{
+  margin: 0 auto;
+  width: 30%;
+  min-width: 300px;
+  max-width: 600px;
+  display: block;
+  font-family: Avenir;
+  border: 1px solid darken(lightgrey, 10%);
+  margin-top: 5%;
+  .add{
+    background: lightgrey;
+    height: 2em;
+    padding: 0.75em;
+    border-bottom: 1px solid darken(lightgrey, 10%);
+    form{
+      display: block;
+      overflow: hidden;
+      padding: 0;
+      input{
+        height: 2em;
+        width: 100%;
+        border: 0;
+      }
+    }
+    input::-webkit-input-placeholder{
+      font-size: 0.8em;
+      line-height: 2em;
+      padding-left: 0.25em;
+    }
+  }
+  
+  .countdown-items{
+    background: lighten(lightgrey, 10%);
+    list-style: none;
+    padding-left: 0em;
+    margin: 0;
+    .preview{
+      background: lighten(lightblue, 10%); 
+      border: 1px solid lightblue;
+    }
+    .empty{
+      text-align: center;
+      height: 2.5em;
+      padding: 0.5em;
+      font-size: 0.75em;
+      color: gray;
+      b{
+       color: darken(gray, 10%); 
+      }
+    }
+    .countdown-item{
+      padding: 1em;
+      border-bottom: 1px solid lightgrey;
+      height: 1.5em;
+      line-height: 1.5em;
+      .title, .title input{
+        text-transform: uppercase;
+        font-weight: bold;
+        color: darken(gray, 25%);
+        display: block;
+        line-height: 0.75em;
+      }
+      .date, .date input{
+        display: block;
+        font-size: 0.75em;
+        color: gray;
+      }
+      .remaining-time{
+       float: right;
+       color: lighten(blue, 10%);
+       font-size: 1.25em;
+      }
+      .invalid{
+        color: red;
+      }
+    }
+    .countdown-item:last-child{
+      border-bottom: none;
+    }
+    .month{
+      background: lighten(lightgrey, 15%);
+    }
+    .day{
+      background: lighten(lightgrey, 10%);
+    }
+    .hour{
+      background: lighten(lightgrey, 5%);
+    }
+    .minute{
+      background: lighten(lightgray, 2%);
+      border-color: darken(lightgray, 5%);
+    }
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .countdown{
+    width: 100%;
+    margin-top: 0;
+    border: none;
+    .add {
+      position: fixed;
+      width: 100%;
+      margin-top: -3.5em;
+      height: 2em;
+      form{
+        height: 2em;
+        input{
+         background: lighten(lightgray, 15%);
+         border: 0;
+         height: 1.5em !important;
+         width: 88% !important;
+        }
+      }
+    }
+    .add input{
+      width: 85%;
+    }
+    .countdown-items{
+      margin-top: 3.5em;
+    }
+  }
+
+} 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Countdown</title>
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
+   <link rel="stylesheet" href="css/app.css" type="text/css" media="screen" title="no title" charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="apple-mobile-web-app-status-bar-style" content="black">
+   
+   <script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
+   <script src="bower_components/moment/min/moment.min.js" type="text/javascript" charset="utf-8"></script>
+   
+   
+  </head>
+  <body ng-app="CountdownsModule">
+    <div class="countdown" ng-controller="Countdowns">
+      <div class="add"><form ng-submit="addAddCountdown()"><input name="title" ng-model="addCountdownText" ng-change="changeAddCountdown()" placeholder="Add Countdown..."></input></form></div>
+      
+      <ul class="countdown-items" ng-model="Countdowns">
+        <li class="countdown-item preview" ng-show="showAddCountdown" ng-cloak>
+          <span class="remaining-time" ng-class="addCountdownValid">{{addCountdownRemainingTime}}</span>
+          <span class="title">{{addCountdownTitle}}</span>
+          <span class="date" ng-class="addCountdownValid">{{addCountdownDisplayDate}}<span>
+          
+        </li>
+        <li class="countdown-item" ng-repeat="countdown in countdowns | orderBy:'date' | filter:futureEventsFilter track by $index" ng-cloak ng-click="deleteCountdown(countdown)" ng-class="countdownDistance(countdown)">
+          <span class="remaining-time" time-from-now="{{countdown.date}}" >...</span>
+          <span class="title">{{countdown.title}}</span>
+          <span class="date" pretty-time="{{countdown.date}}"><span>
+        </li>
+        <li ng-hide="countdowns.length" class="empty"><b>No Countdowns.</b><br/>Try typing <i>New event September 29</i> in the box above.</li>
+      </ul>
+     
+    </div>
+    
+  <script src="bower_components/angular-touch/angular-touch.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/chrono.custom.js" type="text/javascript" charset="utf-8"></script>
+  <script src="bower_components/lawnchair/src/Lawnchair.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

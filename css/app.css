@@ -1,0 +1,100 @@
+.countdown {
+  margin: 0 auto;
+  width: 30%;
+  min-width: 300px;
+  max-width: 600px;
+  display: block;
+  font-family: Avenir;
+  border: 1px solid #b9b9b9;
+  margin-top: 5%; }
+  .countdown .add {
+    background: lightgrey;
+    height: 2em;
+    padding: 0.75em;
+    border-bottom: 1px solid #b9b9b9; }
+    .countdown .add form {
+      display: block;
+      overflow: hidden;
+      padding: 0; }
+      .countdown .add form input {
+        height: 2em;
+        width: 100%;
+        border: 0; }
+    .countdown .add input::-webkit-input-placeholder {
+      font-size: 0.8em;
+      line-height: 2em;
+      padding-left: 0.25em; }
+  .countdown .countdown-items {
+    background: #ececec;
+    list-style: none;
+    padding-left: 0em;
+    margin: 0; }
+    .countdown .countdown-items .preview {
+      background: #d4ebf2;
+      border: 1px solid lightblue; }
+    .countdown .countdown-items .empty {
+      text-align: center;
+      height: 2.5em;
+      padding: 0.5em;
+      font-size: 0.75em;
+      color: gray; }
+      .countdown .countdown-items .empty b {
+        color: #676767; }
+    .countdown .countdown-items .countdown-item {
+      padding: 1em;
+      border-bottom: 1px solid lightgrey;
+      height: 1.5em;
+      line-height: 1.5em; }
+      .countdown .countdown-items .countdown-item .title, .countdown .countdown-items .countdown-item .title input {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #404040;
+        display: block;
+        line-height: 0.75em; }
+      .countdown .countdown-items .countdown-item .date, .countdown .countdown-items .countdown-item .date input {
+        display: block;
+        font-size: 0.75em;
+        color: gray; }
+      .countdown .countdown-items .countdown-item .remaining-time {
+        float: right;
+        color: #3333ff;
+        font-size: 1.25em; }
+      .countdown .countdown-items .countdown-item .invalid {
+        color: red; }
+    .countdown .countdown-items .countdown-item:last-child {
+      border-bottom: none; }
+    .countdown .countdown-items .month {
+      background: #f9f9f9; }
+    .countdown .countdown-items .day {
+      background: #ececec; }
+    .countdown .countdown-items .hour {
+      background: #e0e0e0; }
+    .countdown .countdown-items .minute {
+      background: #d8d8d8;
+      border-color: #c6c6c6; }
+
+@media only screen and (max-device-width: 480px) {
+  body {
+    margin: 0;
+    padding: 0; }
+
+  .countdown {
+    width: 100%;
+    margin-top: 0;
+    border: none; }
+    .countdown .add {
+      position: fixed;
+      width: 100%;
+      margin-top: -3.5em;
+      height: 2em; }
+      .countdown .add form {
+        height: 2em; }
+        .countdown .add form input {
+          background: #f9f9f9;
+          border: 0;
+          height: 1.5em !important;
+          width: 88% !important; }
+    .countdown .add input {
+      width: 85%; }
+    .countdown .countdown-items {
+      margin-top: 3.5em; } }

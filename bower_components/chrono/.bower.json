@@ -1,0 +1,14 @@
+{
+  "name": "chrono",
+  "homepage": "https://github.com/berryboy/chrono",
+  "_release": "master",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "35cb3b5740c767208e73ac5e3222cf5713c5ad60"
+  },
+  "_source": "git://github.com/berryboy/chrono.git",
+  "_target": "*",
+  "_originalSource": "chrono",
+  "_direct": true
+}
